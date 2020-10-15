@@ -15,9 +15,10 @@ function Actual(props) {
     // const [mainh1, setH1] = useState([]);
     // const [iconH1, setIconH1] = useState([]);
     
-    const APIkey = process.env.REACT_APP_API_KEY;
+    
 
     useEffect(() => {
+        const APIkey = process.env.REACT_APP_API_KEY;
         axios
         .get(`http://api.openweathermap.org/data/2.5/weather?q=${props.cityname}&APPID=${APIkey}`) 
         .then(function (response) {

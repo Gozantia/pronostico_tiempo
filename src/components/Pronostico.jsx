@@ -5,9 +5,10 @@ import Actual from "./Actual";
 function Pronostico(props) {
   const [horaData, setHoraData] = useState("");
 
-  const APIkey = process.env.REACT_APP_API_KEY;
+  
 
   useEffect(() => {
+    const APIkey = process.env.REACT_APP_API_KEY;
     axios
       .get(
         `http://api.openweathermap.org/data/2.5/forecast?q=${props.cityname}&APPID=${APIkey}&units=metric`
