@@ -1,13 +1,39 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  font-family: 'Roboto', sans-serif;
+}
+section.contenedor {
+  min-height: 100vh;  
+  background: rgb(232, 234, 236);
+  display: flex !important;
+  justify-content: center;
+  flex-direction: column;
+}
+section {
+  background: rgb(174, 197, 219);
+  display: flex !important;
+  /* grid-template-columns: 2fr 2fr; */
+  align-items: center;
+  border-radius: 15px;
+  text-align-last: center;
+  text-align: center;
+}
+.hora{
+  background: rgb(100, 157, 248);
+  border-radius: 10px;
+  color: white
+}
+.container-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  margin-top: 15px;
+  padding: 5px;
+  justify-items: center;
+}
+@media only screen and (min-width: 768px) {
+  .container-card {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }

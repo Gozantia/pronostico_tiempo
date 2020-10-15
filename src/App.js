@@ -35,19 +35,33 @@ export class App extends Component {
   })
   console.log(city)
   };
- 
+
+  handleKeyPress = async e => {
+    if(e.key === 'Enter'){
+      this.setState({
+        loadPronostico:true
+      })
+    }
+  }
 
   render() {
     
-    const {loadPronostico } = this.state;
+    const {loadPronostico} = this.state;
     return (
       <div>
-        <header>
-          <Filter pronostico={this.loadPronostico} loadcity={this.getCity} limpiar={this.unLoadPronostico}/>
-        </header>
-        <div>
+        <section className="contenedor">
+          <div>
+          <Filter pronostico={this.loadPronostico}
+           loadcity={this.getCity} 
+           limpiar={this.unLoadPronostico}
+           handleKeyPress ={this.handleKeyPress}
+           />
+          </div>
+          <div>
           {loadPronostico && <Pronostico cityname={this.state.loadCiudad}/> }
-        </div>
+          </div>
+        </section>
+
       </div>
     )
   }
