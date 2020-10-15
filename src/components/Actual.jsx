@@ -15,11 +15,11 @@ function Actual(props) {
     // const [mainh1, setH1] = useState([]);
     // const [iconH1, setIconH1] = useState([]);
     
-    
+    const APIkey = process.env.REACT_APP_API_KEY;
 
     useEffect(() => {
         axios
-        .get(`http://api.openweathermap.org/data/2.5/weather?q=${props.cityname}&APPID=ca651b8d0ab118af883ff06f91d43760`) 
+        .get(`http://api.openweathermap.org/data/2.5/weather?q=${props.cityname}&APPID=${APIkey}`) 
         .then(function (response) {
           const { data } = response;
           setClima(data.main.temp - 273.15)

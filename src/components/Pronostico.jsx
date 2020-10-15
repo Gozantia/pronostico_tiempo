@@ -5,10 +5,12 @@ import Actual from "./Actual";
 function Pronostico(props) {
   const [horaData, setHoraData] = useState("");
 
+  const APIkey = process.env.REACT_APP_API_KEY;
+
   useEffect(() => {
     axios
       .get(
-        `http://api.openweathermap.org/data/2.5/forecast?q=${props.cityname}&APPID=ca651b8d0ab118af883ff06f91d43760&units=metric`
+        `http://api.openweathermap.org/data/2.5/forecast?q=${props.cityname}&APPID=${APIkey}&units=metric`
       )
       .then(function (response) {
         const { data } = response;
